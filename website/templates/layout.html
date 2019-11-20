@@ -5,16 +5,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>LOUConnect</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
-    <link rel="stylesheet" href="assets/css/Search-Input-responsive.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="{{url_for('static',filename = "bootstrap/css/bootstrap.min.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    href="{{url_for('static', filename = "fonts/fontawesome-all.min.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    href="{{url_for('static', filename = "fonts/font-awesome.min.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="image/png"
+    href="{{url_for('static', filename = "fonts/ionicons.min.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="text/css"
+    href="{{url_for('static', filename = "fonts/fontawesome5-overrides.min.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="text/css"
+    href="{{url_for('static', filename = "css/Navigation-Clean.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="text/css"
+    href="{{url_for('static', filename = "css/Pretty-Search-Form.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="text/css"
+    href="{{url_for('static', filename = "css/Search-Input-responsive.css")}}"
+    />
+    <!--===============================================================================================-->
+    <link 
+    rel="stylesheet" 
+    type="text/css"
+    href="{{url_for('static', filename = "css/styles.css")}}"
+    />
+    <!--===============================================================================================-->
 </head>
 
 <body>
@@ -33,10 +82,10 @@
         </nav>
     </section>
     <section class="d-flex float-right flex-column" id="white-section"></section>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{url_for('static',filename = "js/jquery.min.js")}}"></script>
+    <script src="{{url_for('static',filename = "bootstrap/js/bootstrap.min.js")}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="assets/js/mask_init.js"></script>
+    <script src="{{url_for('static',filename = "js/mask_init.js")}}"></script>
 </body>
 
 </html>
