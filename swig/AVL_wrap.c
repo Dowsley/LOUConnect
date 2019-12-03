@@ -3453,6 +3453,65 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_USER_desc_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct USER *arg1 = (struct USER *) 0 ;
+  char *arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  char temp2[400] ;
+  int res2 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "USER_desc_set", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_USER, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "USER_desc_set" "', argument " "1"" of type '" "struct USER *""'"); 
+  }
+  arg1 = (struct USER *)(argp1);
+  res2 = SWIG_AsCharArray(swig_obj[1], temp2, 400);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "USER_desc_set" "', argument " "2"" of type '" "char [400]""'");
+  }
+  arg2 = (char *)(temp2);
+  if (arg2) memcpy(arg1->desc,arg2,400*sizeof(char));
+  else memset(arg1->desc,0,400*sizeof(char));
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_USER_desc_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  struct USER *arg1 = (struct USER *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  char *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_USER, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "USER_desc_get" "', argument " "1"" of type '" "struct USER *""'"); 
+  }
+  arg1 = (struct USER *)(argp1);
+  result = (char *)(char *) ((arg1)->desc);
+  {
+    size_t size = SWIG_strnlen(result, 400);
+    
+    
+    
+    resultobj = SWIG_FromCharPtrAndSize(result, size);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_USER_niver_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   struct USER *arg1 = (struct USER *) 0 ;
@@ -3736,9 +3795,10 @@ SWIGINTERN PyObject *_wrap_novoNo(PyObject *SWIGUNUSEDPARM(self), PyObject *args
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
   char *arg4 = (char *) 0 ;
-  int arg5 ;
+  char *arg5 = (char *) 0 ;
   int arg6 ;
   int arg7 ;
+  int arg8 ;
   int res1 ;
   char *buf1 = 0 ;
   int alloc1 = 0 ;
@@ -3751,16 +3811,19 @@ SWIGINTERN PyObject *_wrap_novoNo(PyObject *SWIGUNUSEDPARM(self), PyObject *args
   int res4 ;
   char *buf4 = 0 ;
   int alloc4 = 0 ;
-  int val5 ;
-  int ecode5 = 0 ;
+  int res5 ;
+  char *buf5 = 0 ;
+  int alloc5 = 0 ;
   int val6 ;
   int ecode6 = 0 ;
   int val7 ;
   int ecode7 = 0 ;
-  PyObject *swig_obj[7] ;
+  int val8 ;
+  int ecode8 = 0 ;
+  PyObject *swig_obj[8] ;
   USER *result = 0 ;
   
-  if (!SWIG_Python_UnpackTuple(args, "novoNo", 7, 7, swig_obj)) SWIG_fail;
+  if (!SWIG_Python_UnpackTuple(args, "novoNo", 8, 8, swig_obj)) SWIG_fail;
   res1 = SWIG_AsCharPtrAndSize(swig_obj[0], &buf1, NULL, &alloc1);
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "novoNo" "', argument " "1"" of type '" "char *""'");
@@ -3781,11 +3844,11 @@ SWIGINTERN PyObject *_wrap_novoNo(PyObject *SWIGUNUSEDPARM(self), PyObject *args
     SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "novoNo" "', argument " "4"" of type '" "char *""'");
   }
   arg4 = (char *)(buf4);
-  ecode5 = SWIG_AsVal_int(swig_obj[4], &val5);
-  if (!SWIG_IsOK(ecode5)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "novoNo" "', argument " "5"" of type '" "int""'");
-  } 
-  arg5 = (int)(val5);
+  res5 = SWIG_AsCharPtrAndSize(swig_obj[4], &buf5, NULL, &alloc5);
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "novoNo" "', argument " "5"" of type '" "char *""'");
+  }
+  arg5 = (char *)(buf5);
   ecode6 = SWIG_AsVal_int(swig_obj[5], &val6);
   if (!SWIG_IsOK(ecode6)) {
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "novoNo" "', argument " "6"" of type '" "int""'");
@@ -3796,18 +3859,25 @@ SWIGINTERN PyObject *_wrap_novoNo(PyObject *SWIGUNUSEDPARM(self), PyObject *args
     SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "novoNo" "', argument " "7"" of type '" "int""'");
   } 
   arg7 = (int)(val7);
-  result = (USER *)novoNo(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  ecode8 = SWIG_AsVal_int(swig_obj[7], &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "novoNo" "', argument " "8"" of type '" "int""'");
+  } 
+  arg8 = (int)(val8);
+  result = (USER *)novoNo(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
   resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_USER, 0 |  0 );
   if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
   if (alloc4 == SWIG_NEWOBJ) free((char*)buf4);
+  if (alloc5 == SWIG_NEWOBJ) free((char*)buf5);
   return resultobj;
 fail:
   if (alloc1 == SWIG_NEWOBJ) free((char*)buf1);
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
   if (alloc3 == SWIG_NEWOBJ) free((char*)buf3);
   if (alloc4 == SWIG_NEWOBJ) free((char*)buf4);
+  if (alloc5 == SWIG_NEWOBJ) free((char*)buf5);
   return NULL;
 }
 
@@ -4153,6 +4223,8 @@ static PyMethodDef SwigMethods[] = {
 	 { "USER_email_get", _wrap_USER_email_get, METH_O, NULL},
 	 { "USER_ocupacao_set", _wrap_USER_ocupacao_set, METH_VARARGS, NULL},
 	 { "USER_ocupacao_get", _wrap_USER_ocupacao_get, METH_O, NULL},
+	 { "USER_desc_set", _wrap_USER_desc_set, METH_VARARGS, NULL},
+	 { "USER_desc_get", _wrap_USER_desc_get, METH_O, NULL},
 	 { "USER_niver_set", _wrap_USER_niver_set, METH_VARARGS, NULL},
 	 { "USER_niver_get", _wrap_USER_niver_get, METH_O, NULL},
 	 { "USER_esquerda_set", _wrap_USER_esquerda_set, METH_VARARGS, NULL},

@@ -27,9 +27,10 @@ while (True):
             cpf = input("Digite o cpf: ")
             email =  input("Digite o email: ")
             niver = input("Digite a data de aniversario no formato DD MM AAAA: ").split(" ")
+            desc = input("Insira a descrição: ")
 
             # Insercao
-            arvore = inserirNo(arvore, novoNo(nome, ocup, cpf, email, int(niver[0]), int(niver[1]), int(niver[2])))
+            arvore = inserirNo(arvore, novoNo(nome, ocup, cpf, email, desc, int(niver[0]), int(niver[1]), int(niver[2])))
 
     # Listar Users
     elif (escolha == '2'):
@@ -46,6 +47,7 @@ while (True):
             print("Ocupacao:", found.ocupacao)
             print("CPF:", found.cpf)
             print("Email:", found.email)
+            print("Descrição:",found.desc)
             print("{}/{}/{}".format(found.niver.dia, found.niver.mes, found.niver.ano))
 
     # Modificar user

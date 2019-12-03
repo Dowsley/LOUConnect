@@ -1,26 +1,6 @@
-from flask import Flask, render_template, url_for
+from flask import *
+from AVL import *
 app = Flask(__name__)
-
-posts = [
-    {
-        'nome': 'Lucas Cyrne',
-        'desc': 'Blog Post 1',
-        'email': 'lcf@cesar.school',
-        'cpf': '444.278.278-45',
-        'skills': 'Python',
-        'id': 'First Post Content',
-        'member_since': 'May 28, 1996'
-    },
-    {
-        'nome': 'Eduardo Eile',
-        'desc': 'Blog Post 2',
-        'email': 'eec@cesar.school',
-        'cpf': '999.333.333-66',
-        'skills': 'Python, Arduino, Agile', 
-        'id': 'Second Post Content',
-        'member_since': 'Dez 12, 1998'
-    },
-]
 
 @app.route("/")
 @app.route("/signup")
@@ -37,11 +17,58 @@ def signupDescribe():
 
 @app.route("/profile")
 def profile():
-    return render_template('profile.html', title='Profile')
+    nome = "Joao Dowsley"
+    arvore = None
+    arvore = desserializar(arvore)
+    found = buscarNo(arvore, nome)
+
+    if found!=None:
+        f_nome = found.nome
+        f_cpf = found.cpf
+        f_ocup = found.ocupacao
+        f_email = found.email
+        f_dia = found.niver.dia
+        f_mes = found.niver.mes
+        f_ano = found.niver.ano
+        f_desc = found.desc
+    else:
+        f_nome = None
+        f_cpf = None
+        f_ocup = None
+        f_email = None
+        f_dia = None
+        f_mes = None
+        f_ano = None
+        f_desc = None
+    return render_template('profile.html',title='Profile',desc=f_desc,nome=f_nome,cpf=f_cpf,ocup=f_ocup,email=f_email,dia=f_dia,mes=f_mes,ano=f_ano)
 
 @app.route("/profile-edit")
 def profileEdit():
     return render_template('profile-edit.html', title='Edit Profile')
+
+@app.route("/edit_info", methods=["POST"])
+def editInfo():
+    ocup = request.form["ocup"]
+    cpf = request.form["cpf"]
+    email = request.form["email"]
+    desc = request.form["desc"]
+    niver = (request.form["niver"]).split("/")
+
+    arvore = None
+    arvore = desserializar(arvore)
+
+    found = buscarNo(arvore, "Joao Dowsley")
+    found.ocupacao = ocup
+    found.cpf = cpf
+    found.email = email
+    found.desc = desc
+    found.niver.dia = int(niver[0])
+    found.niver.mes = int(niver[1])
+    found.niver.ano = int(niver[2])
+
+    serializar(arvore)
+
+    return redirect(url_for('profile'))
 
 
 if __name__ == '__main__':

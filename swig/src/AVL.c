@@ -6,6 +6,7 @@
 #define max(a,b) (((a) > (b)) ? (a) : (b))	// Achar maior valor rapidamente.
 #define MAX_NOME 50   // Tamanho maximo do stream para nome
 #define MAX_OCUP 100  // Tamanho maximo do stream para ocupação
+#define MAX_DESC 400  // Tamanho maximo de stream pra descriçao
 
 FILE* fp;	// Ponteiro global para o arquivo que armazenará os registros.
 
@@ -23,7 +24,7 @@ USER* recriarNo(USER* No)
 
 
 // Cria um novo nó de acordo com as entradas.
-USER* novoNo(char* nome, char* ocupacao, char* cpf, char* email, int dia, int mes, int ano)
+USER* novoNo(char* nome, char* ocupacao, char* cpf, char* email, char* desc, int dia, int mes, int ano)
 {
 	USER* novoUser = (USER*)malloc(sizeof(USER));
 	novoUser->esquerda = NULL;
@@ -36,6 +37,7 @@ USER* novoNo(char* nome, char* ocupacao, char* cpf, char* email, int dia, int me
 	strcpy(novoUser->ocupacao, ocupacao);
 	strcpy(novoUser->cpf, cpf);
 	strcpy(novoUser->email, email);
+	strcpy(novoUser->desc, desc);
 
 	return novoUser;
 }

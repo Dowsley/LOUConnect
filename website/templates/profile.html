@@ -6,60 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>LOUConnect</title>
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
-    type="text/css" 
+    <link
+    rel="stylesheet"
+    type="text/css"
     href="{{url_for('static',filename = "bootstrap/css/bootstrap.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     href="{{url_for('static', filename = "fonts/fontawesome-all.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     href="{{url_for('static', filename = "fonts/font-awesome.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="image/png"
     href="{{url_for('static', filename = "fonts/ionicons.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "fonts/fontawesome5-overrides.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/Navigation-Clean.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/Pretty-Search-Form.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/Search-Input-responsive.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/styles.css")}}"
     />
@@ -79,7 +79,7 @@
                         </div>
                     </form>
                     <ul class="nav navbar-nav ml-auto" style="height: 100%;">
-                        <li class="nav-item" role="presentation" style="height: 100%;"><a class="nav-link" href="profile.html" style="height: 100%;padding-top: 18px;color: black;">Nome do Usuário</a></li>
+                        <li class="nav-item" role="presentation" style="height: 100%;"><a class="nav-link" href="profile.html" style="height: 100%;padding-top: 18px;color: black;">{{nome}}</a></li>
                         <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size: 28px;color: black;"><i class="icon ion-android-more-vertical m-2"></i></a>
                             <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                         </li>
@@ -92,21 +92,19 @@
     <div class="container d-flex" style="position: relative;height: 75%;width: 80%;top: -160px;padding-right: 0px;padding-left: 0px;">
         <div class="shadow flex-column b-r-4" style="width: 40%;height: 100%;background-color: #fff;">
             <div class="d-flex flex-column align-items-center align-content-center" id="prof-top" style="font-size: 12px;width: 250px;height: auto;max-height: 210px;margin: 0 auto;margin-top: 30px;"><img id="prof-pic" style="margin: 10px auto;" src="assets/img/realob_001.jpg">
-                <h3 class="m-b-5" style="font-size: 20px;">Usuário</h3>
-                <p class="m-b-5">Ocupação</p>
-                <p style="margin-bottom: 10px;"><i class="icon ion-ios-location"></i>&nbsp;Localização de Origem</p><a class="btn btn-primary site-btn-sm" role="button" style="width: 90px;height: 20px;margin: 0 auto;padding-top: 3px;font-size: 10px;" href="profile-edit">Editar Perfil</a></div>
+                <h3 class="m-b-5" style="font-size: 20px;">{{nome}}</h3>
+                <p class="m-b-5">{{ocup}}</p>
+                <p style="margin-bottom: 10px;"><i class="icon ion-ios-location"></i>&nbsp;Recife</p><a class="btn btn-primary site-btn-sm" role="button" style="width: 90px;height: 20px;margin: 0 auto;padding-top: 3px;font-size: 10px;" href="profile-edit">Editar Perfil</a></div>
             <div
                 id="prof-mid" class="p-3" style="width: 100%;height: auto;max-height: 180px;margin: 15px auto;font-size: 12px;margin-bottom: 0px;">
-                <h3 style="font-size: 14px;">Sobre mim</h3>
-                <p class="text-justify" style="font-size: 11px;">Duis vitae est molestie, consectetur urna sit amet, mollis mauris. Fusce cursus fringilla aliquet. Ut lacinia orci a luctus pharetra. Cras ut magna consectetur, aliquam magna ac, mollis libero. Curabitur lacus dolor, elementum a est ac,
-                    tincidunt pretium neque. Sed et varius urna, laoreet facilisis dolor. Proin vulputate, urna vitae pharetra convallis, nulla sem lacinia quam, a accumsan nunc sem vitae nunc. Proin eget libero pretium felis volutpat mollis eu nec turpis.
-                    Phasellus molestie enim eu elit efficitur, ut porttitor urna sodales. Fusce purus felis, volutpat et ante eget, porta euismod quam.<br></p>
+                <h3 style="font-size: 14px;">Sobre Mim</h3>
+                <p class="text-justify" style="font-size: 11px;">{{desc}}<br></p>
         </div>
         <div id="prof-bot" class="p-3" style="max-height: 180px;">
             <h1 style="font-size: 14px;">Contatos</h1>
-            <p class="m-b-5" style="font-size: 12px;"><i class="icon ion-email"></i>&nbsp;email@domain.com</p>
-            <p class="m-b-5" style="font-size: 12px;"><i class="icon ion-ios-telephone"></i>&nbsp;(81)00000-0000</p>
-            <p style="font-size: 12px;"><i class="icon ion-android-globe"></i>&nbsp;www.website.com</p>
+            <p class="m-b-5" style="font-size: 12px;"><i class="icon ion-email"></i>&nbsp;{{email}}</p>
+            <p class="m-b-5" style="font-size: 12px;"><i class="icon ion-ios-telephone"></i>&nbsp;(81)988799907</p>
+            <p style="font-size: 12px;"><i class="icon ion-android-globe"></i>&nbsp;www.SAM.com</p>
         </div>
     </div>
     <div style="width: 50%;height: 100%;margin-left: 55px;">
