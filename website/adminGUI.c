@@ -1,6 +1,6 @@
 #include <conio.h>   		// Para funções que movem o cursor de escrita, e gerenciam entrada e saída de caracteres.
 #include <windows.h> 		// Para funções relacionadas ao OS Windows. Neste caso, só está sendo usada para dar "cls" e limpar a tela do console.
-#include "swig/src/AVL.c"	// Contém todas as funções e definições necessárias para gerenciar os registros armazenados.
+#include "source/AVL.c"	// Contém todas as funções e definições necessárias para gerenciar os registros armazenados.
 
 
 // <conio.h> :: Variável e função conseguem mover o cursor de escrita e leitura no console (CMD), com coordenadas X e Y.
@@ -18,7 +18,7 @@ int main()
 	USER* arvore = NULL;            // Criação da Árvore
 	USER* temp;                     // Auxiliar para armazenar um user temporariamente.
 
-    char var_nome[50], var_cpf[15], var_email[30], var_ocup[100];   // Auxiliares de busca e alteração
+    char var_nome[50], var_cpf[15], var_email[30], var_ocup[MAX_OCUP], var_desc[MAX_DESC];   // Auxiliares de busca e alteração
     char another, choice;			// Auxiliares de escolha na GUI.
 
     int var_dia, var_mes, var_ano;  // Auxiliar para armazenar aniversario temporariamente.
@@ -78,6 +78,13 @@ int main()
 						fgets(var_ocup, MAX_OCUP, stdin);
 						if ((strlen(var_ocup) > 0) && (var_ocup[strlen(var_ocup) - 1] == '\n'))
 							var_ocup[strlen(var_ocup) - 1] = '\0';
+						
+						fflush(stdin);
+
+						printf("\nDigite sua descricao em no maximo 100 caracteres: ");
+						fgets(var_desc, MAX_DESC, stdin);
+						if ((strlen(var_desc) > 0) && (var_desc[strlen(var_desc) - 1] == '\n'))
+							var_desc[strlen(var_desc) - 1] = '\0';
 
 						printf("\nDigite sua data de nascimento no formato DD MM AAAA: ");
 						scanf("%d", &var_dia);
@@ -90,7 +97,7 @@ int main()
 						printf("\nDigite seu email: ");
 						scanf("%s", var_email);
 
-						arvore = inserirNo(arvore, novoNo(var_nome, var_ocup, var_cpf, var_email, var_dia, var_mes, var_ano));
+						arvore = inserirNo(arvore, novoNo(var_nome, var_ocup, var_cpf, var_email, var_desc, var_dia, var_mes, var_ano));
 					}
 	                printf("\n\nAdicionar outro Usuario? (s/n) ");
 	                fflush(stdin);
@@ -124,6 +131,7 @@ int main()
                       	printf("\nCPF: %s", temp->cpf);
                       	printf("\nEmail: %s", temp->email);
                       	printf("\nOcupacao: %s", temp->ocupacao);
+						printf("\nDescricao: %s", temp->desc);
 					}
 					else
 						printf("\n<< ERRO: Usuario nao encontrado. >>");
@@ -159,6 +167,8 @@ int main()
 						gotoxy(30,20);
 						printf("5. Ocupacao");
 						gotoxy(30,22);
+						printf("6. Descricao");
+						gotoxy(30,24);
 				        printf("Escolha: ");
 
 				        fflush(stdin);
@@ -204,6 +214,14 @@ int main()
         							var_ocup[strlen(var_ocup) - 1] = '\0';
 								strcpy(temp->ocupacao, var_ocup);
 								printf("\nOcupacao alterada com sucesso!");
+								break;
+							case '6':
+								printf("\nDigite a nova descricao: ");
+								fgets(var_desc, MAX_DESC, stdin);
+								if ((strlen(var_desc) > 0) && (var_desc[strlen(var_desc) - 1] == '\n'))
+									var_desc[strlen(var_desc) - 1] = '\0';
+								strcpy(temp->desc, var_desc);
+								printf("\nDescricao alterada com sucesso!");
 								break;
         				}
 	                }
