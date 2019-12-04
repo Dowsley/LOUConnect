@@ -7,7 +7,7 @@ typedef struct Data{
 
 // Struct que guarda informações de um usuário.
 typedef struct USER{
-	char nome[50], cpf[15], email[30], ocupacao[100], desc[400];
+	char nome[50], cpf[15], email[30], ocupacao[100], desc[100];
 	DATA niver;
 	struct USER* esquerda;
 	struct USER* direita;

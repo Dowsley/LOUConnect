@@ -3459,7 +3459,7 @@ SWIGINTERN PyObject *_wrap_USER_desc_set(PyObject *SWIGUNUSEDPARM(self), PyObjec
   char *arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  char temp2[400] ;
+  char temp2[100] ;
   int res2 ;
   PyObject *swig_obj[2] ;
   
@@ -3469,13 +3469,13 @@ SWIGINTERN PyObject *_wrap_USER_desc_set(PyObject *SWIGUNUSEDPARM(self), PyObjec
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "USER_desc_set" "', argument " "1"" of type '" "struct USER *""'"); 
   }
   arg1 = (struct USER *)(argp1);
-  res2 = SWIG_AsCharArray(swig_obj[1], temp2, 400);
+  res2 = SWIG_AsCharArray(swig_obj[1], temp2, 100);
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "USER_desc_set" "', argument " "2"" of type '" "char [400]""'");
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "USER_desc_set" "', argument " "2"" of type '" "char [100]""'");
   }
   arg2 = (char *)(temp2);
-  if (arg2) memcpy(arg1->desc,arg2,400*sizeof(char));
-  else memset(arg1->desc,0,400*sizeof(char));
+  if (arg2) memcpy(arg1->desc,arg2,100*sizeof(char));
+  else memset(arg1->desc,0,100*sizeof(char));
   resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
@@ -3500,7 +3500,7 @@ SWIGINTERN PyObject *_wrap_USER_desc_get(PyObject *SWIGUNUSEDPARM(self), PyObjec
   arg1 = (struct USER *)(argp1);
   result = (char *)(char *) ((arg1)->desc);
   {
-    size_t size = SWIG_strnlen(result, 400);
+    size_t size = SWIG_strnlen(result, 100);
     
     
     

@@ -29,7 +29,7 @@ def signupDescribe():
 
 @app.route("/profile")
 def profile():
-    nome = "Ana Silva"
+    nome = "Ana Oliveira"
     arvore = None
     arvore = desserializar(arvore)
     found = buscarNo(arvore, nome)
@@ -69,7 +69,7 @@ def editInfo():
     arvore = None
     arvore = desserializar(arvore)
 
-    found = buscarNo(arvore, "Ana Silva")
+    found = buscarNo(arvore, "Ana Oliveira")
     found.ocupacao = ocup
     found.cpf = cpf
     found.email = email

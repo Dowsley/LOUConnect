@@ -6,7 +6,7 @@
 #define max(a,b) (((a) > (b)) ? (a) : (b))	// Achar maior valor rapidamente.
 #define MAX_NOME 50   // Tamanho maximo do stream para nome
 #define MAX_OCUP 100  // Tamanho maximo do stream para ocupação
-#define MAX_DESC 400  // Tamanho maximo de stream pra descriçao
+#define MAX_DESC 100 // Tamanho maximo de stream pra descriçao
 
 FILE* fp;	// Ponteiro global para o arquivo que armazenará os registros.
 
