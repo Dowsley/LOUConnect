@@ -6,60 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>LOUConnect</title>
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
-    type="text/css" 
+    <link
+    rel="stylesheet"
+    type="text/css"
     href="{{url_for('static',filename = "bootstrap/css/bootstrap.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     href="{{url_for('static', filename = "fonts/fontawesome-all.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     href="{{url_for('static', filename = "fonts/font-awesome.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="image/png"
     href="{{url_for('static', filename = "fonts/ionicons.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "fonts/fontawesome5-overrides.min.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/Navigation-Clean.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/Pretty-Search-Form.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/Search-Input-responsive.css")}}"
     />
     <!--===============================================================================================-->
-    <link 
-    rel="stylesheet" 
+    <link
+    rel="stylesheet"
     type="text/css"
     href="{{url_for('static', filename = "css/styles.css")}}"
     />
@@ -71,8 +71,7 @@
         <header id="nav">
             <nav class="navbar navbar-light navbar-expand-md text-left float-left">
                 <div class="container-fluid"><a class="navbar-brand roboto" href="#"><strong>LOUC</strong>o</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div
-                        class="collapse navbar-collapse" id="navcol-1">
+                    <div class="collapse navbar-collapse" id="navcol-1">
                         <ul class="nav navbar-nav">
                             <li class="nav-item" role="presentation"><a class="nav-link roboto" href="#">First Item</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link roboto" href="#">Second Item</a></li>
@@ -84,65 +83,67 @@
         </header>
     </section>
     <section class="d-flex float-right flex-column my-auto" id="white-section" style="margin:  0 auto;">
+        <form class="" action="{{url_for('signupTags')}}" method="POST">
         <div class="container d-flex flex-column justify-content-between" id="signup-container" style="font-size: 11px;font-family: Roboto;margin-top: 70px;">
             <section>
                 <div id="signup-top">
                     <h1 class="d-lg-flex justify-content-lg-center roboto" id="signup-title"><strong>Bem-vindo ao LOUCo.</strong></h1>
                     <div class="form-group m-b-5">
                         <p class="p-l-5 m-b-5">Nome Completo</p>
-                        <form><input class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text" placeholder="Preencha seu nome aqui..." required=""></form>
+                        <input type="text" name="nome" value="" class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text" placeholder="Preencha seu nome aqui..." required="">
                     </div>
                     <div class="form-group margin-top--10 m-b-5">
                         <p class="p-l-5 m-b-5">CPF</p>
-                        <form><input class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text" required="" placeholder="000.000.000-00" data-mask="000.000.000-00"></form>
+                        <input type="text" name="cpf" value="" class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text" required="" placeholder="000.000.000-00" data-mask="000.000.000-00">
                     </div>
                     <div class="form-group margin-top--10 m-b-5">
                         <p class="p-l-5 m-b-5">Email</p>
-                        <form><input class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="email" placeholder="email@domain.com"></form>
+                        <input type="text" name="email" value="" class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="email" placeholder="email@domain.com">
                     </div>
                     <div class="row m-b-5" id="signup-inner-block" style="margin-right: 0px;margin-left: 0px;height: 46px;margin-bottom: 5px;">
                         <div class="col" style="width: 50%;padding-left: 0px;padding-right: 7.5px;height: 46px;">
                             <div class="form-group" id="date-area" style="margin-bottom: 0px;width: 100%;">
                                 <p class="p-l-5 m-b-5">Data de Nascimento</p>
-                                <form><input class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text" data-mask="00/00/0000" placeholder="dd/mm/aaaa"></form>
+                                <input type="text" name="niver" value="" class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text" data-mask="00/00/0000" placeholder="dd/mm/aaaa">
                             </div>
                         </div>
                         <div class="col" style="padding-right: 0px;padding-left: 7.5px;width: 50%;height: 46px;">
                             <div class="form-group" id="gender-area" style="margin-bottom: 0px;width: 100%;">
                                 <p class="p-l-5 m-b-5">Gênero</p>
-                                <form><select class="form-control form-control-sm margin-top--10 input-area-height b-r-4" placeholder="••••••••••"><option value="">Escolha...</option><option value="12">Masculino</option><option value="13">Feminino</option><option value="14">Não-Binário</option><option value="15">Prefiro não dizer</option></select></form>
+                                <select class="form-control form-control-sm margin-top--10 input-area-height b-r-4" placeholder="••••••••••"><option value="">Escolha...</option><option value="12">Masculino</option><option value="13">Feminino</option><option value="14">Não-Binário</option><option value="15">Prefiro não dizer</option></select>
                             </div>
                         </div>
                     </div>
                     <div class="form-group margin-top--10 m-b-5">
                         <p class="p-l-5 m-b-5">Senha</p>
-                        <form><input class="form-control margin-top--10 input-area-height b-r-4" type="password" placeholder="••••••••••"></form>
+                        <input class="form-control margin-top--10 input-area-height b-r-4" type="password" placeholder="••••••••••">
                     </div>
                     <div class="form-group margin-top--10">
                         <p class="p-l-5 m-b-5">Confirmar Senha</p>
-                        <form><input class="form-control margin-top--10 input-area-height b-r-4" type="password" placeholder="••••••••••"></form>
+                        <input class="form-control margin-top--10 input-area-height b-r-4" type="password" placeholder="••••••••••">
                     </div>
                 </div>
                 <div id="signup-bot" style="margin-top: 5px;">
                     <div class="form-group margin-top--10 m-b-5">
                         <p class="p-l-5 m-b-5">Nível de Formação</p>
-                        <form><select class="form-control form-control-sm margin-top--10 input-area-height b-r-4"><option value="">Escolha...</option><option value="16">Ensino fundamental incompleto</option><option value="16">Ensino fundamental completo</option><option value="14">Ensino médio incompleto</option><option value="15">Ensino médio completo</option><option value="16">Ensino superior incompleto</option><option value="17">Ensino superior completo</option></select></form>
+                        <select class="form-control form-control-sm margin-top--10 input-area-height b-r-4"><option value="">Escolha...</option><option value="16">Ensino fundamental incompleto</option><option value="16">Ensino fundamental completo</option><option value="14">Ensino médio incompleto</option><option value="15">Ensino médio completo</option><option value="16">Ensino superior incompleto</option><option value="17">Ensino superior completo</option></select>
                     </div>
                     <div class="form-group margin-top--10 m-b-5">
-                        <p class="p-l-5 m-b-5">Área de Atuação</p>
-                        <form><input class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text"></form>
+                        <p class="p-l-5 m-b-5">Ocupação</p>
+                        <input type="text" name="ocup" value="" class="form-control form-control-sm margin-top--10 input-area-height b-r-4" type="text">
                     </div>
                 </div>
             </section>
         </div>
         <div class="row d-flex d-xl-flex flex-column justify-content-center align-self-baseline mb-auto justify-content-xl-center" id="row-move" style="width: 100%;margin-top: 40px;margin-right: 0px;margin-left: 0px;margin-bottom: 0px;height: 100px;">
-            <div class="col" style="font-family: Roboto;font-size: 12px;width: 100%;padding-right: 0px;padding-left: 0px;height: 100%;"><a class="btn btn-primary btn-lg float-right roboto" role="button" id="site-btn" style="font-family: Roboto;line-height: 1.0;font-size: 17px;margin-top: 0px;margin-bottom: 0px;padding-top: 14px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;"
-                    href="signup-tags">PRÓXIMO</a>
+            <div class="col" style="font-family: Roboto;font-size: 12px;width: 100%;padding-right: 0px;padding-left: 0px;height: 100%;">
+                <button type="submit" class="btn btn-primary btn-lg float-right roboto" id="site-btn" style="font-family: Roboto;line-height: 1.0;font-size: 17px;margin-top: 0px;margin-bottom: 0px;padding-top: 14px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;">PRÓXIMO</button>
                 <div class="text-center" id="row-next-radio" style="margin-top: 0px;padding-right: 0px;padding-top: 100px;height: auto;width: 100%;">
                     <div id="radio" style="width: 100%;padding-left: 0px;margin: 0 auto;"><input type="radio" class="m-1" checked=""><input type="radio" class="m-1" disabled=""><input type="radio" class="m-1" disabled=""></div>
                 </div>
             </div>
         </div>
+    </form>
     </section>
     <script src="{{url_for('static',filename = "js/jquery.min.js")}}"></script>
     <script src="{{url_for('static',filename = "bootstrap/js/bootstrap.min.js")}}"></script>

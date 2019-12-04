@@ -7,8 +7,20 @@ app = Flask(__name__)
 def signup():
     return render_template('signup.html', title='Sign Up')
 
-@app.route("/signup-tags")
+@app.route("/signup-tags", methods=["POST"])
 def signupTags():
+    nome = request.form["nome"]
+    ocup = request.form["ocup"]
+    cpf = request.form["cpf"]
+    email = request.form["email"]
+    niver = (request.form["niver"]).split("/")
+    desc = " "
+
+    arvore = None
+    arvore = desserializar(arvore)
+    arvore = inserirNo(arvore, novoNo(nome,ocup,cpf,email,desc,int(niver[0]),int(niver[1]),int(niver[2])))
+    serializar(arvore)
+
     return render_template('signup-tags.html', title='Sign Up - Tags')
 
 @app.route("/signup-describe")
@@ -17,7 +29,7 @@ def signupDescribe():
 
 @app.route("/profile")
 def profile():
-    nome = "Joao Dowsley"
+    nome = "Ana Silva"
     arvore = None
     arvore = desserializar(arvore)
     found = buscarNo(arvore, nome)
@@ -57,7 +69,7 @@ def editInfo():
     arvore = None
     arvore = desserializar(arvore)
 
-    found = buscarNo(arvore, "Joao Dowsley")
+    found = buscarNo(arvore, "Ana Silva")
     found.ocupacao = ocup
     found.cpf = cpf
     found.email = email
